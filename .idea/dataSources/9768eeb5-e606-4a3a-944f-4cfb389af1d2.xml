@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@localhost">
+  <database-model serializer="dbm" rdbms="ORACLE" format-version="4.7">
+    <root id="1"/>
+    <schema id="2" parent="1" name="OVCASUS">
+      <ObjectId>50</ObjectId>
+      <IntrospectionTimestamp>2018-07-12.15:55:53</IntrospectionTimestamp>
+      <CreatedTimestamp>2018-07-12.14:24:38</CreatedTimestamp>
+      <ModifiedTimestamp>2018-07-12.14:30:29</ModifiedTimestamp>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="PUBLIC">
+      <ObjectId>1</ObjectId>
+    </schema>
+    <schema id="4" parent="1" name="SYS">
+      <ObjectId>0</ObjectId>
+    </schema>
+    <schema id="5" parent="1" name="SYSTEM">
+      <ObjectId>5</ObjectId>
+    </schema>
+    <schema id="6" parent="1" name="OUTLN">
+      <ObjectId>9</ObjectId>
+    </schema>
+    <schema id="7" parent="1" name="DIP">
+      <ObjectId>14</ObjectId>
+    </schema>
+    <schema id="8" parent="1" name="ORACLE_OCM">
+      <ObjectId>21</ObjectId>
+    </schema>
+    <schema id="9" parent="1" name="DBSNMP">
+      <ObjectId>29</ObjectId>
+    </schema>
+    <schema id="10" parent="1" name="APPQOSSYS">
+      <ObjectId>30</ObjectId>
+    </schema>
+    <schema id="11" parent="1" name="CTXSYS">
+      <ObjectId>32</ObjectId>
+    </schema>
+    <schema id="12" parent="1" name="XDB">
+      <ObjectId>34</ObjectId>
+    </schema>
+    <schema id="13" parent="1" name="ANONYMOUS">
+      <ObjectId>35</ObjectId>
+    </schema>
+    <schema id="14" parent="1" name="MDSYS">
+      <ObjectId>42</ObjectId>
+    </schema>
+    <schema id="15" parent="1" name="HR">
+      <ObjectId>43</ObjectId>
+    </schema>
+    <schema id="16" parent="1" name="FLOWS_FILES">
+      <ObjectId>44</ObjectId>
+    </schema>
+    <schema id="17" parent="1" name="APEX_PUBLIC_USER">
+      <ObjectId>45</ObjectId>
+    </schema>
+    <schema id="18" parent="1" name="APEX_040000">
+      <ObjectId>47</ObjectId>
+    </schema>
+    <schema id="19" parent="1" name="DONNEH">
+      <ObjectId>48</ObjectId>
+    </schema>
+    <schema id="20" parent="1" name="BOEK">
+      <ObjectId>49</ObjectId>
+    </schema>
+    <schema id="21" parent="1" name="XS$NULL">
+      <ObjectId>2147483638</ObjectId>
+    </schema>
+    <table id="22" parent="2" name="ADRES">
+      <ObjectId>20782</ObjectId>
+      <CreatedTimestamp>2018-07-12.14:24:38</CreatedTimestamp>
+      <ModifiedTimestamp>2018-07-12.14:24:38</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="23" parent="2" name="OV_CHIPKAART">
+      <ObjectId>20784</ObjectId>
+      <CreatedTimestamp>2018-07-12.14:24:38</CreatedTimestamp>
+      <ModifiedTimestamp>2018-07-12.14:24:38</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="24" parent="2" name="OV_CHIPKAART_PRODUCT">
+      <ObjectId>20790</ObjectId>
+      <CreatedTimestamp>2018-07-12.14:24:38</CreatedTimestamp>
+      <ModifiedTimestamp>2018-07-12.14:24:38</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="25" parent="2" name="PRODUCT">
+      <ObjectId>20786</ObjectId>
+      <CreatedTimestamp>2018-07-12.14:24:38</CreatedTimestamp>
+      <ModifiedTimestamp>2018-07-12.14:24:38</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="26" parent="2" name="REIZIGER">
+      <ObjectId>20788</ObjectId>
+      <CreatedTimestamp>2018-07-12.14:24:38</CreatedTimestamp>
+      <ModifiedTimestamp>2018-07-12.14:30:29</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <column id="27" parent="22" name="ADRESID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="22" name="POSTCODE">
+      <Position>2</Position>
+      <DataType>VARCHAR2(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="22" name="HUISNUMMER">
+      <Position>3</Position>
+      <DataType>VARCHAR2(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="22" name="STRAAT">
+      <Position>4</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="22" name="WOONPLAATS">
+      <Position>5</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="32" parent="22" name="REIZIGERID">
+      <Position>6</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="33" parent="22" name="SYS_C007273">
+      <ObjectId>20783</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-07-12.14:24:38</CreatedTimestamp>
+      <ModifiedTimestamp>2018-07-12.14:24:38</ModifiedTimestamp>
+      <TablespaceName>SYSTEM</TablespaceName>
+      <ColNames>ADRESID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="34" parent="22" name="SYS_C007273">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-07-12.14:24:38</ModifiedTimestamp>
+      <ColNames>ADRESID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C007273</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="35" parent="22" name="FKADRES632599">
+      <ModifiedTimestamp>2018-07-12.14:24:38</ModifiedTimestamp>
+      <ColNames>REIZIGERID</ColNames>
+      <RefSchemaName>OVCASUS</RefSchemaName>
+      <RefTableName>REIZIGER</RefTableName>
+      <RefKeyName>SYS_C007288</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="36" parent="23" name="KAARTNUMMER">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="23" name="GELDIGTOT">
+      <Position>2</Position>
+      <DataType>DATE|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="23" name="KLASSE">
+      <Position>3</Position>
+      <DataType>NUMBER(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="23" name="SALDO">
+      <Position>4</Position>
+      <DataType>NUMBER(16,2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="23" name="REIZIGERID">
+      <Position>5</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="41" parent="23" name="SYS_C007279">
+      <ObjectId>20785</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-07-12.14:24:38</CreatedTimestamp>
+      <ModifiedTimestamp>2018-07-12.14:24:38</ModifiedTimestamp>
+      <TablespaceName>SYSTEM</TablespaceName>
+      <ColNames>KAARTNUMMER</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="42" parent="23" name="SYS_C007279">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-07-12.14:24:38</ModifiedTimestamp>
+      <ColNames>KAARTNUMMER</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C007279</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="43" parent="23" name="FKOV_CHIPKAA98923">
+      <ModifiedTimestamp>2018-07-12.14:24:38</ModifiedTimestamp>
+      <ColNames>REIZIGERID</ColNames>
+      <RefSchemaName>OVCASUS</RefSchemaName>
+      <RefTableName>REIZIGER</RefTableName>
+      <RefKeyName>SYS_C007288</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="44" parent="24" name="OVPRODUCTID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="24" name="KAARTNUMMER">
+      <Position>2</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="24" name="PRODUCTNUMMER">
+      <Position>3</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="24" name="REISPRODUCTSTATUS">
+      <Position>4</Position>
+      <DataType>VARCHAR2(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="24" name="LASTUPDATE">
+      <Position>5</Position>
+      <DataType>DATE|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="49" parent="24" name="SYS_C007294">
+      <ObjectId>20791</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-07-12.14:24:38</CreatedTimestamp>
+      <ModifiedTimestamp>2018-07-12.14:24:38</ModifiedTimestamp>
+      <TablespaceName>SYSTEM</TablespaceName>
+      <ColNames>OVPRODUCTID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="50" parent="24" name="SYS_C007294">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-07-12.14:24:38</ModifiedTimestamp>
+      <ColNames>OVPRODUCTID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C007294</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="51" parent="24" name="FKOV_CHIPKAA92944">
+      <ModifiedTimestamp>2018-07-12.14:24:38</ModifiedTimestamp>
+      <ColNames>KAARTNUMMER</ColNames>
+      <RefSchemaName>OVCASUS</RefSchemaName>
+      <RefTableName>OV_CHIPKAART</RefTableName>
+      <RefKeyName>SYS_C007279</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="52" parent="24" name="FKOV_CHIPKAA700031">
+      <ModifiedTimestamp>2018-07-12.14:24:38</ModifiedTimestamp>
+      <ColNames>PRODUCTNUMMER</ColNames>
+      <RefSchemaName>OVCASUS</RefSchemaName>
+      <RefTableName>PRODUCT</RefTableName>
+      <RefKeyName>SYS_C007284</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="53" parent="25" name="PRODUCTNUMMER">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="54" parent="25" name="PRODUCTNAAM">
+      <Position>2</Position>
+      <DataType>VARCHAR2(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="25" name="BESCHRIJVING">
+      <Position>3</Position>
+      <DataType>VARCHAR2(500)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="25" name="PRIJS">
+      <Position>4</Position>
+      <DataType>NUMBER(16,2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="57" parent="25" name="SYS_C007284">
+      <ObjectId>20787</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-07-12.14:24:38</CreatedTimestamp>
+      <ModifiedTimestamp>2018-07-12.14:24:38</ModifiedTimestamp>
+      <TablespaceName>SYSTEM</TablespaceName>
+      <ColNames>PRODUCTNUMMER</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="58" parent="25" name="SYS_C007284">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-07-12.14:24:38</ModifiedTimestamp>
+      <ColNames>PRODUCTNUMMER</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C007284</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="59" parent="26" name="REIZIGERID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="60" parent="26" name="VOORLETTERS">
+      <Position>2</Position>
+      <DataType>VARCHAR2(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="61" parent="26" name="TUSSENVOEGSEL">
+      <Position>3</Position>
+      <DataType>VARCHAR2(10)|0</DataType>
+    </column>
+    <column id="62" parent="26" name="ACHTERNAAM">
+      <Position>4</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="63" parent="26" name="GEBOORTEDATUM">
+      <Position>5</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <index id="64" parent="26" name="SYS_C007288">
+      <ObjectId>20789</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-07-12.14:24:38</CreatedTimestamp>
+      <ModifiedTimestamp>2018-07-12.14:24:38</ModifiedTimestamp>
+      <TablespaceName>SYSTEM</TablespaceName>
+      <ColNames>REIZIGERID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="65" parent="26" name="SYS_C007288">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-07-12.14:24:38</ModifiedTimestamp>
+      <ColNames>REIZIGERID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C007288</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

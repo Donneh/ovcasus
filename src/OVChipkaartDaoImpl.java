@@ -137,9 +137,10 @@ public class OVChipkaartDaoImpl extends  OracleBaseDao implements OVChipkaartDao
         ov.setKlasse(rs.getInt("KLASSE"));
         ov.setGeldigTot(rs.getDate("GELDIGTOT"));
         ov.setSaldo(rs.getFloat("SALDO"));
-        ov.setReizigerId(rs.getInt("REIZIGERID"));
+        int id = rs.getInt("REIZIGERID");
+        ov.setReizigerId(id);
         ReizigerOracleDaoImpl reiziger = new ReizigerOracleDaoImpl();
-        Reiziger eigenaar = reiziger.findById(rs.getInt("REIZIGERID"));
+        Reiziger eigenaar = reiziger.findById(id);
         ov.setEigenaar(eigenaar);
         return ov;
     }

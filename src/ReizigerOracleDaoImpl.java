@@ -104,8 +104,10 @@ public class ReizigerOracleDaoImpl extends OracleBaseDao implements ReizigerDao 
     }
 
     private Reiziger buildReizigerObjecT(ResultSet rs) throws  SQLException {
-        String naam = rs.getString("VOORLETTERS") + " " + rs.getString("TUSSENVOEGSEL") + " " + rs.getString("ACHTERNAAM");
-        Reiziger reiziger = new Reiziger(naam, rs.getDate("GEBOORTEDATUM"));
+        StringBuilder naam = new StringBuilder(rs.getString("VOORLETTERS") + " ");
+        naam.append(rs.getString("TUSSENVOEGSEL") + " ");
+        naam.append(rs.getString("ACHTERNAAM") + " ");
+        Reiziger reiziger = new Reiziger(naam.toString(), rs.getDate("GEBOORTEDATUM"));
 
         OVChipkaartDao ovdao = new OVChipkaartDaoImpl();
         reiziger.setKaarten(ovdao.findByReiziger(rs.getInt("REIZIGERID")));
