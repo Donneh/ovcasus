@@ -1,3 +1,4 @@
+import javax.swing.plaf.nimbus.State;
 import javax.xml.transform.Result;
 import java.sql.*;
 import java.util.ArrayList;
@@ -5,7 +6,6 @@ import java.util.List;
 
 public class ReizigerOracleDaoImpl extends OracleBaseDao implements ReizigerDao {
 
-    private ArrayList<Reiziger> reizigers =  new ArrayList<Reiziger>();
 
     /**
      * Returned alle reizigers.
@@ -19,7 +19,7 @@ public class ReizigerOracleDaoImpl extends OracleBaseDao implements ReizigerDao 
 
             ArrayList<Reiziger> reizigers =  new ArrayList<Reiziger>();
             while(rs.next()) {
-                reizigers.add(buildReizigerObjecT(rs));
+                reizigers.add(buildreizigerobject(rs));
             }
             return reizigers;
         } catch (Exception e) {
@@ -40,10 +40,7 @@ public class ReizigerOracleDaoImpl extends OracleBaseDao implements ReizigerDao 
             ResultSet rs = stmt.executeQuery();
 
             while(rs.next()) {
-                String naam = rs.getString("VOORLETTERS") + " " + rs.getString("TUSSENVOEGSEL") + " " + rs.getString("ACHTERNAAM");
-                Reiziger reiziger = new Reiziger(naam, rs.getDate("GEBOORTEDATUM"));
-
-                return reiziger;
+                return buildreizigerobject(rs);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -57,14 +54,25 @@ public class ReizigerOracleDaoImpl extends OracleBaseDao implements ReizigerDao 
      * @param GBdatum
      * @return ArrayList<Reiziger>
      */
-    public List<Reiziger> findByGBdatum(String GBdatum) {
-        ArrayList<Reiziger> result = new ArrayList<Reiziger>();
-        for (Reiziger reiziger : reizigers) {
-            if (reiziger.getGBdatum().toString().equals(GBdatum)) {
-                result.add(reiziger);
+    public List<Reiziger> findByGBdatum(Date GBdatum) {
+        try {
+            String query = "SELECT REIZIGERID, VOORLETTERS, TUSSENVOEGSEL, ACHTERNAAM, GEBOORTEDATUM " +
+                    "FROM REIZIGER WHERE GEBOORTEDATUM = ?";
+            PreparedStatement stmt = getConnection().prepareStatement(query);
+            stmt.setDate(1, GBdatum);
+
+            ResultSet rs = stmt.executeQuery();
+
+            ArrayList<Reiziger> reizigers =  new ArrayList<Reiziger>();
+            while (rs.next()) {
+                reizigers.add(buildreizigerobject(rs));
             }
+            return reizigers;
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        return result;
+
+        return null;
     }
 
     /**
@@ -73,25 +81,60 @@ public class ReizigerOracleDaoImpl extends OracleBaseDao implements ReizigerDao 
      * @return
      */
     public Reiziger save(Reiziger reiziger) {
-        if(!reizigers.contains(reiziger)) {
-            reizigers.add(reiziger);
+        try {
+            String query = "INSERT INTO REIZIGER" +
+                    "(VOORLETTERS, TUSSENVOEGSEL, ACHTERNAAM, GEBOORTEDATUM) VALUES " +
+                    "(?, ?, ?, ?)";
+
+            String generatedColumns[] = { "REIZIGERID" };
+            PreparedStatement stmt = getConnection().prepareStatement(query, generatedColumns);
+
+            stmt.setString(1, reiziger.getVoorletters());
+            stmt.setString(2, reiziger.getTussenveogsel());
+            stmt.setString(3, reiziger.getAchternaam());
+            stmt.setDate(4, reiziger.getGeboortedatum());
+
+            stmt.executeUpdate();
+
+            ResultSet rs = stmt.getGeneratedKeys();
+            if(rs.next()) {
+                return findById(rs.getInt(1));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
-        return reiziger;
+        return null;
     }
 
     /**
      * Past een opgeslagen reiziger aan.
-     * @param origineel, updatedReiziger
+     * @param reiziger
      * @return Reiziger
      */
-    public Reiziger update(Reiziger origineel, Reiziger updatedReiziger) {
-        if(reizigers.contains(origineel)) {
-            reizigers.remove(origineel);
-            reizigers.add(updatedReiziger);
+    public Reiziger update(Reiziger reiziger) {
+        try {
+            String query =
+                    "UPDATE REIZIGER SET " +
+                    "VOORLETTERS = ?, TUSSENVOEGSEL = ?, ACHTERNAAM = ?, GEBOORTEDATUM = ? " +
+                    "WHERE REIZIGERID = ?";
+            PreparedStatement stmt = getConnection().prepareStatement(query);
+            stmt.setString(1, reiziger.getVoorletters());
+            stmt.setString(2, reiziger.getTussenveogsel());
+            stmt.setString(3, reiziger.getAchternaam());
+            stmt.setDate(4, reiziger.getGeboortedatum());
+            stmt.setInt(5, reiziger.getId());
+
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.rowUpdated()) {
+                return findById(reiziger.getId());
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
-        return updatedReiziger;
+        return null;
     }
 
     /**
@@ -100,17 +143,33 @@ public class ReizigerOracleDaoImpl extends OracleBaseDao implements ReizigerDao 
      * @return boolean
      */
     public boolean delete(Reiziger reiziger) {
-        return reizigers.remove(reiziger);
+        try {
+            String query = "DELETE FROM REIZIGER WHERE REIZIGERID = ?";
+            PreparedStatement stmt = getConnection().prepareStatement(query);
+            stmt.setInt(1, reiziger.getId());
+            int rs = stmt.executeUpdate();
+
+            return rs > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
-    private Reiziger buildReizigerObjecT(ResultSet rs) throws  SQLException {
-        StringBuilder naam = new StringBuilder(rs.getString("VOORLETTERS") + " ");
-        naam.append(rs.getString("TUSSENVOEGSEL") + " ");
-        naam.append(rs.getString("ACHTERNAAM") + " ");
-        Reiziger reiziger = new Reiziger(naam.toString(), rs.getDate("GEBOORTEDATUM"));
+    private Reiziger buildreizigerobject(ResultSet rs) throws  SQLException {
+        int id = rs.getInt("REIZIGERID");
+        Reiziger reiziger = new Reiziger();
+        reiziger.setId(id);
+        reiziger.setVoorletters(rs.getString("VOORLETTERS"));
+        reiziger.setTussenveogsel(rs.getString("TUSSENVOEGSEL"));
+        reiziger.setAchternaam(rs.getString("ACHTERNAAM"));
+        reiziger.setGeboortedatum(rs.getDate("GEBOORTEDATUM"));
 
-        OVChipkaartDao ovdao = new OVChipkaartDaoImpl();
-        reiziger.setKaarten(ovdao.findByReiziger(rs.getInt("REIZIGERID")));
+        OVChipkaartDaoImpl ovdao = new OVChipkaartDaoImpl();
+        reiziger.setKaarten(ovdao.findByReiziger(id));
+        AdresDaoImpl adao = new AdresDaoImpl();
+        reiziger.setAdressen(adao.findByReiziger(id));
+
         return reiziger;
     }
 }

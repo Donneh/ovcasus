@@ -4,79 +4,95 @@ import java.util.List;
 
 public class Reiziger {
 
-    private String naam;
+    private int id;
+    private String voorletters;
+    private String tussenveogsel;
+    private String achternaam;
     private Date geboortedatum;
     private List<OVChipkaart> kaarten = new ArrayList<OVChipkaart>();
+    private List<Adres> adressen = new ArrayList<>();
 
-    public Reiziger(String naam, Date geboortedatum) {
-        this.naam = naam;
+    public Reiziger(int id, String voorletters, String tussenveogsel, String achternaam, Date geboortedatum, List<OVChipkaart> kaarten) {
+        this.id = id;
+        this.voorletters = voorletters;
+        this.tussenveogsel = tussenveogsel;
+        this.achternaam = achternaam;
         this.geboortedatum = geboortedatum;
+        this.kaarten = kaarten;
     }
 
-    /**
-     * returned de naam van de reiziger.
-     * @return naam
-     */
-    public String getNaam() {
-        return naam;
+    public Reiziger() {
+
     }
 
-    /**
-     * Set de naam van de reiziger.
-     * @param naam
-     */
-    public void setNaam(String naam) {
-        this.naam = naam;
+    public int getId() {
+        return id;
     }
 
-    /**
-     * Returned de geboortedatum van de reiziger.
-     * @return geboortedatum
-     */
-    public Date getGBdatum() {
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getVoorletters() {
+        return voorletters;
+    }
+
+    public void setVoorletters(String voorletters) {
+        this.voorletters = voorletters;
+    }
+
+    public String getTussenveogsel() {
+        return tussenveogsel;
+    }
+
+    public void setTussenveogsel(String tussenveogsel) {
+        this.tussenveogsel = tussenveogsel;
+    }
+
+    public String getAchternaam() {
+        return achternaam;
+    }
+
+    public void setAchternaam(String achternaam) {
+        this.achternaam = achternaam;
+    }
+
+    public Date getGeboortedatum() {
         return geboortedatum;
     }
 
-    /**
-     * Set de geboortedatum van de reiziger.
-     * @param gbdatum
-     */
-    public void setGBdatum(Date gbdatum) {
-        this.geboortedatum = gbdatum;
+    public void setGeboortedatum(Date geboortedatum) {
+        this.geboortedatum = geboortedatum;
     }
 
     public List<OVChipkaart> getKaarten() {
-        return this.kaarten;
+        return kaarten;
     }
 
     public void setKaarten(List<OVChipkaart> kaarten) {
         this.kaarten = kaarten;
     }
 
-    /**
-     * Kijk of obj hetzelfde is als de reiziger.
-     * @param obj
-     * @return boolean
-     */
-    public boolean equals(Object obj) {
-        if (obj instanceof Reiziger) {
-            Reiziger reiziger = (Reiziger) obj;
-            return this.naam.equals(reiziger.naam) && this.geboortedatum == reiziger.geboortedatum;
-        }
+    public List<Adres> getAdressen() {
+        return this.adressen;
+    }
 
-        return false;
+    public void setAdressen(List<Adres> adressen) {
+        this.adressen = adressen;
     }
 
     public String toString() {
-        StringBuilder output = new StringBuilder();
-        output.append("Reiziger");
-        output.append("Naam: " + this.getNaam() + " ");
-        output.append("Geboortedatum: " + this.getGBdatum() + " ");
+        StringBuilder output = new StringBuilder("Reiziger - ");
+        output.append("Id: ").append(getId()).append(" ");
+        output.append("Voorletters: ").append(getVoorletters()).append(" ");
+        output.append("Tussenvoegsel: ").append(getTussenveogsel()).append(" ");
+        output.append("Achternaam: ").append(getAchternaam()).append(" ");
         output.append("Kaarten: ");
-        for (OVChipkaart kaart : getKaarten()) {
-            output.append(kaart);
+        for (OVChipkaart ov : getKaarten()) {
+            output.append(ov);
+            output.append(" ");
         }
+
         return output.toString();
     }
-
 }

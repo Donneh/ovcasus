@@ -8,7 +8,7 @@ import java.util.List;
 
 public class OVChipkaartDaoImpl extends  OracleBaseDao implements OVChipkaartDao {
 
-
+    private ReizigerOracleDaoImpl reizigerDAO = new ReizigerOracleDaoImpl();
 
     public OVChipkaart save(OVChipkaart ovChipkaart) {
         try {
@@ -74,7 +74,7 @@ public class OVChipkaartDaoImpl extends  OracleBaseDao implements OVChipkaartDao
 
     public List<OVChipkaart> findByReiziger(int reizigerId) {
         try {
-            String query = "SELECT KAARTNUMMER, GELDIGTOT, KLASSE, SALDO FROM OV_CHIPKAART WHERE REIZIGERID = ?";
+            String query = "SELECT KAARTNUMMER, GELDIGTOT, KLASSE, SALDO, REIZIGERID FROM OV_CHIPKAART WHERE REIZIGERID = ?";
             PreparedStatement stmt =  getConnection().prepareStatement(query);
             stmt.setInt(1, reizigerId);
 
@@ -99,10 +99,12 @@ public class OVChipkaartDaoImpl extends  OracleBaseDao implements OVChipkaartDao
             String query = "SELECT KAARTNUMMER, GELDIGTOT, KLASSE, SALDO, REIZIGERID FROM OV_CHIPKAART";
             Statement stmt = getConnection().createStatement();
             ResultSet rs = stmt.executeQuery(query);
-
             ArrayList<OVChipkaart> ovchipkaarten = new ArrayList<>();
+
             while (rs.next()) {
-                ovchipkaarten.add(buildOVChipkaartObject(rs));
+                OVChipkaart kaart = buildOVChipkaartObject(rs);
+                kaart.setEigenaar(this.reizigerDAO.findById(kaart.getReizigerId()));
+                ovchipkaarten.add(kaart);
             }
 
             return ovchipkaarten;
@@ -121,7 +123,10 @@ public class OVChipkaartDaoImpl extends  OracleBaseDao implements OVChipkaartDao
 
             ResultSet rs = stmt.executeQuery();
             while(rs.next()) {
-                return  buildOVChipkaartObject(rs);
+                OVChipkaart ov = buildOVChipkaartObject(rs);
+                ov.setEigenaar(this.reizigerDAO.findById(ov.getReizigerId()));
+
+                return ov;
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -139,9 +144,7 @@ public class OVChipkaartDaoImpl extends  OracleBaseDao implements OVChipkaartDao
         ov.setSaldo(rs.getFloat("SALDO"));
         int id = rs.getInt("REIZIGERID");
         ov.setReizigerId(id);
-        ReizigerOracleDaoImpl reiziger = new ReizigerOracleDaoImpl();
-        Reiziger eigenaar = reiziger.findById(id);
-        ov.setEigenaar(eigenaar);
+
         return ov;
     }
 }

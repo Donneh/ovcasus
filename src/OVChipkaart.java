@@ -57,12 +57,11 @@ public class OVChipkaart {
 
     public String toString() {
         StringBuilder sb = new StringBuilder("OVChipkaart");
-        sb.append("Kaartnummer: " + getKaartNummer() + " ");
-        sb.append("Geldig tot: " + getGeldigTot() + " ");
-        sb.append("Klasse: " + getKlasse() + " ");
-        sb.append("Saldo: " + getSaldo() + " ");
-        sb.append("Reiziger: " + getEigenaar() + " ");
-
+        sb.append("Kaartnummer: ").append(getKaartNummer()).append(" ");
+        sb.append("Geldig tot: ").append(getGeldigTot()).append(" ");
+        sb.append("Klasse: ").append(getKlasse()).append(" ");
+        sb.append("Saldo: ").append(getSaldo()).append(" ");
+        sb.append("Reiziger: ").append(getEigenaar()).append(" ");
 
         return sb.toString();
     }
