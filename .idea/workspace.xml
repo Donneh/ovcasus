@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f81585f-810c-4cd8-b821-8bbf026c5e40" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Adres.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AdresDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AdresDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/04246bbb-dbc5-474c-b666-eddb46dd44c0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ovcasus/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ovcasus/OVChipkaart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ovcasus/OVChipkaart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ovcasus/OVChipkaartDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ovcasus/OVChipkaartDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ovcasus/OVChipkaartDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ovcasus/OVChipkaartDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ovcasus/OracleBaseDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ovcasus/OracleBaseDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ovcasus/Reiziger.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ovcasus/Reiziger.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ovcasus/ReizigerDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ovcasus/ReizigerDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ovcasus/ReizigerOracleDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ovcasus/ReizigerOracleDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OVChipkaart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OVChipkaart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OVChipkaartDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OVChipkaartDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Reiziger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Reiziger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ReizigerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReizigerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ReizigerOracleDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReizigerOracleDaoImpl.java" afterDir="false" />
-    </list>
+    <list default="true" id="5f81585f-810c-4cd8-b821-8bbf026c5e40" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -70,8 +48,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
-              <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
+            <state relative-caret-position="984">
+              <caret line="59" column="49" lean-forward="true" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -151,9 +129,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -175,6 +150,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -183,7 +161,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Oracle" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wac/Les 5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../p3" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="terminal" />
@@ -270,16 +248,15 @@
       <workItem from="1531396420698" duration="1851000" />
       <workItem from="1531401529474" duration="9739000" />
       <workItem from="1531490319797" duration="6879000" />
-      <workItem from="1531579321687" duration="4533000" />
+      <workItem from="1531579321687" duration="5180000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37308000" />
+    <option name="totallyTimeSpent" value="37955000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1456" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -291,11 +268,11 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.38084465" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.1402715" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.38084465" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.1402715" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.16770834" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16757813" />
       <window_info anchor="right" id="Database" order="3" weight="0.31458333" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -683,8 +660,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
+        <state relative-caret-position="984">
+          <caret line="59" column="49" lean-forward="true" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
